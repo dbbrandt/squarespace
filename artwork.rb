@@ -1,6 +1,6 @@
 class Artwork
 
-  attr_accessor :category_id, :title, :image_url
+  attr_accessor :category_id, :title, :image_url, :category_name
 
   def initialize(element)
     #LOGGER.debug "Element: #{element}"
@@ -8,4 +8,6 @@ class Artwork
     @title =  element.children.select { |e| e.name == 'post_name'}.first.children.first.text
     @image_url = element.children.select { |e| e.name == 'link'}.first.children.first.text
   end
+
+
 end
